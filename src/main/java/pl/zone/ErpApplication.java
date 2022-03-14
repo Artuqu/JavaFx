@@ -1,4 +1,4 @@
-package pl.coderslab.javafx;
+package pl.zone;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

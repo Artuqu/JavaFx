@@ -1,4 +1,4 @@
-package pl.coderslab.javafx;
+package pl.zone.javafx;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;

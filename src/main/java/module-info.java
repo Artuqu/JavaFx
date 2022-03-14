@@ -1,10 +1,15 @@
-module pl.coderslab.javafx {
+module pl.zone.javafx {
     requires javafx.controls;
     requires javafx.fxml;
+    requires lombok;
+    requires spring.web;
 
 
-    opens pl.coderslab.javafx to javafx.fxml;
-    opens pl.coderslab.controller to javafx.fxml;
-    exports pl.coderslab.javafx;
-    exports pl.coderslab.controller;
+    opens pl.zone.javafx to javafx.fxml;
+    opens pl.zone.controller to javafx.fxml;
+    exports pl.zone.javafx;
+    exports pl.zone.controller;
+    exports pl.zone;
+    exports pl.zone.dto;
+    opens pl.zone to javafx.fxml;
 }
