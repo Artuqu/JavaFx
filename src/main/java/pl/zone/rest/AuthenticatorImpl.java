@@ -1,6 +1,5 @@
 package pl.zone.rest;
 
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 import pl.zone.dto.OperatorAuthenticationResult;
 import pl.zone.dto.OperatorCredentials;
