@@ -10,6 +10,7 @@ module pl.zone.javafx {
     exports pl.zone.javafx;
     exports pl.zone.controller;
     exports pl.zone;
+    exports pl.zone.table;
     exports pl.zone.dto;
     opens pl.zone to javafx.fxml;
 }
