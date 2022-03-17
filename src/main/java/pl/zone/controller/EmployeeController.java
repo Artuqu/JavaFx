@@ -4,6 +4,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -23,7 +24,17 @@ public class EmployeeController implements Initializable {
     public EmployeeController() {
         this.employeeRestClient = new EmployeeRestClient();
     }
+    @FXML
+    private Button addButton;
 
+    @FXML
+    private Button deleteButton;
+
+    @FXML
+    private Button editButton;
+
+    @FXML
+    private Button viewButton;
 
     @FXML
     private TableView<EmployeeTableModel> employeeView;
