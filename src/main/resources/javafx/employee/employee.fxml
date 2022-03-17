@@ -24,7 +24,7 @@
       </HBox>
    </top>
    <stylesheets>
-      <URL value="@../css/employee.css" />
-      <URL value="@../css/globalColors.css" />
+      <URL value="@../../css/employee.css" />
+      <URL value="@../../css/globalColors.css" />
    </stylesheets>
 </BorderPane>

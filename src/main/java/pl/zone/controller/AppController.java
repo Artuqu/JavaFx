@@ -27,7 +27,7 @@ public class AppController implements Initializable {
 
     private void loadView() {
         try {
-            BorderPane borderPane = FXMLLoader.load(getClass().getResource("/javafx/employee.fxml"));
+            BorderPane borderPane = FXMLLoader.load(getClass().getResource("/javafx/employee/employee.fxml"));
             appPane.getChildren().add(borderPane);
         } catch (IOException e) {
             e.printStackTrace();
