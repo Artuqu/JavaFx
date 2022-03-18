@@ -9,6 +9,10 @@
     -fx-background-color: -fx-secondary-red;
 }
 
+.background {
+    -fx-background-color: -fx-primary-background;
+    -fx-border-color: -fx-primary-blue;
+}
 
 .title {
     -fx-font-size: 25px;
