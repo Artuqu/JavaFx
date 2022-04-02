@@ -28,12 +28,17 @@ public class EmployeeController implements Initializable {
 
     private final EmployeeRestClient employeeRestClient;
     private final static String addEmployeeSource = "/javafx/employee/add_employee.fxml";
+    private ObservableList<EmployeeTableModel> data;
 
     @FXML
     private Button addButton;
 
     @FXML
     private Button deleteButton;
+
+    @FXML
+    private Button refreshButton;
+
 
     @FXML
     private Button editButton;
@@ -46,12 +51,14 @@ public class EmployeeController implements Initializable {
 
     public EmployeeController() {
         this.employeeRestClient = new EmployeeRestClient();
+        this.data = FXCollections.observableArrayList();
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         createTableView();
         addEmployeeButton();
+        setRefreshButton();
     }
 
     private void addEmployeeButton() {
@@ -89,21 +96,27 @@ public class EmployeeController implements Initializable {
 
         employeeView.getColumns().addAll(firstName, lastName, salary);
 
-        ObservableList<EmployeeTableModel> data = FXCollections.observableArrayList();
-        loadAllEmployee(data);
+
+        loadAllEmployee();
 
         employeeView.setItems(data);
     }
 
-    private void loadAllEmployee(ObservableList<EmployeeTableModel> data) {
+    private void loadAllEmployee() {
         Thread thread = new Thread(() ->
         {
             List<EmployeeDto> employeesList = employeeRestClient.getEmployees();
+            data.clear();
             data.addAll(employeesList.stream()
                     .map(EmployeeTableModel::of)
                     .collect(Collectors.toList()));
         }
         );
         thread.start();
+    }
+
+
+    private void setRefreshButton() {
+        refreshButton.setOnAction(x -> loadAllEmployee());
     }
 }

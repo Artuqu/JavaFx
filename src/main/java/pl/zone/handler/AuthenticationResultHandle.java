@@ -1,4 +1,4 @@
-package pl.zone.rest;
+package pl.zone.handler;
 
 import pl.zone.dto.OperatorAuthenticationResult;
 

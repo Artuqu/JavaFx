@@ -3,6 +3,7 @@ package pl.zone.rest;
 import org.springframework.web.client.RestTemplate;
 import pl.zone.dto.OperatorAuthenticationResult;
 import pl.zone.dto.OperatorCredentials;
+import pl.zone.handler.AuthenticationResultHandle;
 
 
 public class AuthenticatorImpl implements Authenticator {
