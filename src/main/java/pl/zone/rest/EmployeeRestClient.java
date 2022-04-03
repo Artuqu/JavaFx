@@ -26,10 +26,21 @@ public class EmployeeRestClient {
 
     public void saveEmployee(EmployeeDto dto, SaveEmployeeHandler handler) {
         ResponseEntity<EmployeeDto> employeeDtoResponseEntity = restTemplate.postForEntity(employeeUrl, dto, EmployeeDto.class);
-        if(HttpStatus.OK.equals(employeeDtoResponseEntity.getStatusCode())){
-            handler.handle();
-        }else {
+        if (HttpStatus.OK.equals(employeeDtoResponseEntity.getStatusCode())) {
+            handler.handler();
+        } else {
 //            TODO implement
+        }
+    }
+
+    public EmployeeDto getEmployee(Long idEmployee) {
+        String url = employeeUrl + "/" + idEmployee;
+        ResponseEntity<EmployeeDto> responseEntity = restTemplate.getForEntity(url, EmployeeDto.class);
+        if(HttpStatus.OK.equals(responseEntity.getStatusCode())){
+            return responseEntity.getBody();
+        }else {
+//            TODO implementation
+            throw new RuntimeException("Can't load employee");
         }
     }
 }

@@ -66,7 +66,7 @@ public class PopupFactory {
         okButton.setOnMouseExited(x -> okButton.setStyle(okButtonStyle()));
         okButton.setOnAction(x -> {
             stage.close();
-            infoPopupOkHandler.handler();
+            infoPopupOkHandler.handle();
         });
         pane.getChildren().addAll(label, okButton);
 

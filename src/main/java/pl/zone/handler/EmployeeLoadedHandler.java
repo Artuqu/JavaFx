@@ -1,7 +1,7 @@
 package pl.zone.handler;
 
 @FunctionalInterface
-public interface InfoPopupOkHandler {
+public interface EmployeeLoadedHandler {
 
     void handle();
 }
